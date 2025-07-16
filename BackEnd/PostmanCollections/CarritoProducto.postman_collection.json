@@ -1,0 +1,140 @@
+{
+	"info": {
+		"_postman_id": "7e8d0414-1ea1-4bc7-aad9-44ec1a587047",
+		"name": "CarritoProducto",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "45382867",
+		"_collection_link": "https://fabiangarcia-2471547.postman.co/workspace/Fabian-Garcia's-Workspace~ea59bd02-6124-48a9-8942-8561520b9bcf/collection/45382867-7e8d0414-1ea1-4bc7-aad9-44ec1a587047?action=share&source=collection_link&creator=45382867"
+	},
+	"item": [
+		{
+			"name": "getCarritoProducto",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/carrito-productos",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"carrito-productos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getCarritoProductoxID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/carrito-productos/1/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"carrito-productos",
+						"1",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "insertarCarritoProducto",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"carrito\": {\r\n    \"id_carrito\": 1\r\n  },\r\n  \"producto\": {\r\n    \"idProducto\": 2\r\n  },\r\n  \"cantidad\": 3\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/carrito-productos",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"carrito-productos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "updateCarritoProducto",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"cantidad\": 3\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/carrito-productos/1/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"carrito-productos",
+						"1",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "eliminarCarritoProducto",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/carrito-productos/1/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"carrito-productos",
+						"1",
+						"2"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
