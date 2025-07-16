@@ -1,5 +1,6 @@
 // src/components/Header.jsx
 import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom'; // Agregar este import
 import {
   ShoppingCart,
   User,
@@ -7,7 +8,8 @@ import {
   Menu as MenuIcon,
   X,
   Search,
-  LogOut
+  LogOut,
+  Shield // <- AGREGAR ESTE IMPORT
 } from 'lucide-react';
 import DropdownCategorias from './DropdownCategorias';
 import LoginModal from './LoginModal';
@@ -17,6 +19,7 @@ const Header = () => {
   const [cartCount] = useState(0); // Simulación
   const [showLoginModal, setShowLoginModal] = useState(false);
   const [user, setUser] = useState(null);
+  const navigate = useNavigate(); // Agregar hook de navegación
 
   // Cargar usuario si existe en localStorage
   useEffect(() => {
@@ -26,11 +29,21 @@ const Header = () => {
 
   const handleLoginSuccess = (userData) => {
     setUser(userData);
+    
+    // Redirigir según el tipo de usuario
+    if (userData.tipo === 'admin') {
+      // Redirigir a una ruta de admin (créala si no existe)
+      navigate('/admin');
+    } else {
+      // Redirigir a home o dashboard de usuario
+      navigate('/');
+    }
   };
 
   const handleLogout = () => {
     localStorage.removeItem('user');
     setUser(null);
+    navigate('/'); // Redirigir al home después del logout
   };
 
   const navLinks = [
